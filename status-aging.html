@@ -321,7 +321,9 @@
   const secs = links.map(a => document.querySelector(a.getAttribute('href')));
   const spy = () => {
     let cur = 0;
-    secs.forEach((sec, i) => { if (sec && sec.getBoundingClientRect().top < 140) cur = i; });
+    const line = innerHeight * 0.35;   // 화면 상단 35% 지점 통과 시 현재 섹션
+    secs.forEach((sec, i) => { if (sec && sec.getBoundingClientRect().top < line) cur = i; });
+    if (innerHeight + scrollY >= document.body.scrollHeight - 4) cur = secs.length - 1;  // 바닥 = 마지막
     links.forEach((a, i) => a.classList.toggle('on', i === cur));
   };
   addEventListener('scroll', spy, { passive: true }); spy();

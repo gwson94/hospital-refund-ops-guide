@@ -339,6 +339,15 @@
     links.forEach((a, i) => a.classList.toggle('on', i === cur));
   };
   addEventListener('scroll', spy, { passive: true }); spy();
+
+  // 앵커 클릭 → 도착 섹션 1.5~2초 강조
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (!t) return;
+    t.classList.remove('flash'); void t.offsetWidth;   // 연속 클릭 시 애니메이션 재시작
+    t.classList.add('flash');
+    setTimeout(() => t.classList.remove('flash'), 2100);
+  }));
 </script>
 </div>
 </div>

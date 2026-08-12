@@ -125,7 +125,7 @@
     <div class="farrow">위임장출력 처리 ▼</div>
     <div class="fnode"><div class="fbox">위임장출력<span class="s">활동대기 → 발급도착 → 검수</span></div>
       <div class="fnote"><span class="crit">만료지남(신청 91일+) 건만 이 리스트에 올라옵니다.</span><br>
-        발급 진행 중 일반 정체(10영업일+, 2h센터는 15영업일+)는 기존 아침 정체 보고(센터 탭)가 따로 담당합니다.</div></div>
+        발급 진행 중 일반 정체(기준일부터 10영업일+ — 2h센터는 발급구간만 15영업일+, 검수 대기는 동일 10일)는 기존 아침 정체 보고(센터 탭)가 따로 담당합니다.</div></div>
     <div class="farrow">발급 활동 → 서류 도착 → 검수 ▼</div>
     <div class="fnode"><div class="fbox">서류등록<span class="s">청구서 발송 대기</span></div>
       <div class="fnote"><span class="crit">등기·자동청구실패 건이 15영업일 넘게 머물면 리스트에 올라옵니다.</span></div></div>
@@ -161,7 +161,7 @@
     <div class="card"><b class="t">위임장출력</b>
       <div class="kv"><span class="k">기준</span><span>만료지남(신청 91일+) 건만</span></div>
       <div class="kv"><span class="k">의미</span><span>발급 진행 중에 서비스기간이 끝나버린 건</span></div>
-      <div class="kv"><span class="k">참고</span><span>일반 정체(10영업일+, 2h센터는 15영업일+)는 기존 아침 보고가 담당 — 중복 배제</span></div>
+      <div class="kv"><span class="k">참고</span><span>일반 정체(기준일부터 10영업일+ — 2h는 발급구간만 15영업일)는 기존 아침 보고가 담당 — 중복 배제</span></div>
       <div class="kv"><span class="k">화면</span><span>세부단계 라벨(활동대기·발급도착정체·검수정체) 병기</span></div></div>
     <div class="card"><b class="t">서류등록</b>
       <div class="kv"><span class="k">기준</span><span>이 상태로 15영업일 초과</span></div>

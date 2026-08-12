@@ -37,7 +37,8 @@
   p { margin: 10px 0; }
   .sub { color: var(--sub); font-size: 14px; }
 
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 16px 0; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 16px 0; }
+  .cards.wide2 { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
   .card { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--soft); }
   .card b.t { display: block; margin-bottom: 10px; padding-bottom: 8px; font-size: 15px;
               border-bottom: 1px solid var(--line); }
@@ -50,6 +51,7 @@
   table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 14.5px; }
   th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
   th { background: var(--soft); }
+  table td:first-child, table th:first-child { white-space: nowrap; }
   td.center, th.center { text-align: center; }
 
   .chip { display: inline-block; border-radius: 6px; padding: 1px 8px; font-size: 13px; font-weight: 600; white-space: nowrap; }

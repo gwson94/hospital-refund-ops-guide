@@ -132,9 +132,10 @@ aside.side a.on { background: var(--blue); color: var(--blue-ink); font-weight: 
 
 /* ── 앵커 도착 플래시 — 클릭 후 목적지 섹션 강조 ── */
 @keyframes target-flash {
-  /* Yellow Fade Technique — 강조색은 GitHub attention-subtle(#fff8c5) 표준값 */
-  0%   { background: #fff8c5; }
-  62%  { background: #fff8c5; }
+  /* 템플릿 기조색(블루) 페이드 — 노랑은 수기메모·자동청구실패 의미색이라 충돌 회피.
+     지속시간 표준은 없음(관행 1.5~3초대) — 2초 유지 + 1.5초 페이드 */
+  0%   { background: #e6f0fa; }
+  57%  { background: #e6f0fa; }
   100% { background: transparent; }
 }
-.flash { animation: target-flash 4s ease-out; border-radius: 10px; }
+.flash { animation: target-flash 3.5s ease-out; border-radius: 10px; }

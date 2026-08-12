@@ -11,23 +11,23 @@
 <div class="layout">
 <aside class="side" id="sidenav">
   <div class="ttl">상태별 정체 관제</div>
-  <a href="#s1">5분 요약</a>
-  <a href="#s2">리포트의 정체성</a>
-  <a href="#s3">기초: 상태 파이프라인</a>
-  <a href="#s4">케이스 흐름도</a>
-  <a href="#s5">리스트 기준</a>
-  <a href="#s6">정체구분 라벨</a>
-  <a href="#s7">처리요청</a>
-  <a href="#s8">만료 축</a>
-  <a href="#s9">컬럼 읽는 법</a>
-  <a href="#s10">화면 규칙</a>
-  <a href="#s11">관제 밖 영역</a>
-  <a href="#s12">기준의 근거</a>
-  <a href="#s13">종결·재배당 탭</a>
-  <a href="#s14">용어집</a>
-  <a href="#s4">흐름도</a>
-  <a href="#s12">근거</a>
-  <a href="#s11">§11</a>
+  <a href="#summary">5분 요약</a>
+  <a href="#identity">리포트의 정체성</a>
+  <a href="#pipeline">기초: 상태 파이프라인</a>
+  <a href="#case-flow">케이스 흐름도</a>
+  <a href="#criteria">리스트 기준</a>
+  <a href="#labels">정체구분 라벨</a>
+  <a href="#actions">처리요청</a>
+  <a href="#expiry">만료 축</a>
+  <a href="#columns">컬럼 읽는 법</a>
+  <a href="#screen-rules">화면 규칙</a>
+  <a href="#out-of-scope">관제 밖 영역</a>
+  <a href="#rationale">기준의 근거</a>
+  <a href="#closed-reassign">종결·재배당 탭</a>
+  <a href="#glossary">용어집</a>
+  <a href="#case-flow">흐름도</a>
+  <a href="#rationale">근거</a>
+  <a href="#out-of-scope">§11</a>
 </aside>
 <div class="content">
 
@@ -43,7 +43,7 @@
 
 <main class="wrap">
 
-<section id="s1">
+<section id="summary">
   <h2><span class="no">01</span>5분 요약</h2>
   <div class="cards">
     <div class="card accent"><b class="t">무엇을 보나</b>
@@ -69,19 +69,19 @@
     <b>할일형</b>(예: 청구서 발송 처리). 만료 여부는 문구가 아니라 <b>라벨</b>로 표시한다.</div>
 </section>
 
-<section id="s2">
+<section id="identity">
   <h2><span class="no">02</span>이 리포트의 정체성 — 백로그 현황판이 아니다</h2>
   <p>이 시트는 "지금 일이 얼마나 쌓였나"를 보는 곳이 아닙니다.
      <b>"정상적으로 운영되고 있는데 왜 이 건은 남아 있지? 이상하다, 확인해야 한다"</b>고
      인식되어야 하는 건들만 골라 올리는 <b>예외 목록</b>입니다.</p>
   <ul>
     <li>리스트에 있다 = 정상 흐름을 벗어났다는 신호. 한 건씩 "왜?"를 물을 수 있는 규모를 지향합니다.</li>
-    <li>리스트에 없다 = 정상 진행 중이라는 뜻입니다. 빠졌다고 사라진 게 아니라 다음 단계의 관제 기준을 다시 탑니다(<a href="#s4">흐름도</a>).</li>
-    <li>그래서 각 상태의 기준은 "평균"이 아니라 <b>정상 운영이 설명할 수 있는 소요의 상한</b>으로 잡았습니다(<a href="#s12">근거</a>).</li>
+    <li>리스트에 없다 = 정상 진행 중이라는 뜻입니다. 빠졌다고 사라진 게 아니라 다음 단계의 관제 기준을 다시 탑니다(<a href="#case-flow">흐름도</a>).</li>
+    <li>그래서 각 상태의 기준은 "평균"이 아니라 <b>정상 운영이 설명할 수 있는 소요의 상한</b>으로 잡았습니다(<a href="#rationale">근거</a>).</li>
   </ul>
 </section>
 
-<section id="s3">
+<section id="pipeline">
   <h2><span class="no">03</span>기초: 청구건 상태 파이프라인</h2>
   <p>병원비환급 대신청구는 청구건(병약국 단위) 하나가 아래 상태를 순서대로 지나갑니다.</p>
   <table>
@@ -99,7 +99,7 @@
     돌아오며, 이 시트의 서류등록 기준에 "자동청구실패"로 잡힙니다.</div>
 </section>
 
-<section id="s4">
+<section id="case-flow">
   <h2><span class="no">04</span>케이스 흐름도 — 리스트에 언제 나타나고 어디로 빠지나</h2>
   <p class="sub">상태가 다음 단계로 넘어가면 그 상태의 리스트에서 빠지고(처리 실적), 다음 관제 기준을 다시 탑니다.</p>
   <div class="flow">
@@ -122,7 +122,7 @@
       <ul>
         <li><b>a. 정상 진행</b> — 발송 큐에서 소화 → 청구서발송 → 종결 탭에서 다시 보임 (공백 없음)</li>
         <li><b>b. 문제 발생</b> — 등기·자동청구실패 건이 15영업일 묵으면 → 이 리스트로 재등장 (공백 없음)</li>
-        <li><b>c. 관제 밖</b> — 그 외 팩스·이메일 대기는 발송 시스템·청구팀 큐 소관 (<a href="#s11">§11</a>)</li>
+        <li><b>c. 관제 밖</b> — 그 외 팩스·이메일 대기는 발송 시스템·청구팀 큐 소관 (<a href="#out-of-scope">§11</a>)</li>
       </ul>
     </div>
     <div class="farrow">청구서 발송 / 실패·취소·반송 ▼</div>
@@ -132,7 +132,7 @@
   </div>
 </section>
 
-<section id="s5">
+<section id="criteria">
   <h2><span class="no">05</span>상태별 리스트 기준</h2>
   <div class="cards">
     <div class="card"><b class="t">대리인미지정 — 신청 75일+</b>
@@ -154,7 +154,7 @@
     라벨 <span class="chip exp">만료지남</span>으로 표시됩니다.</div>
 </section>
 
-<section id="s6">
+<section id="labels">
   <h2><span class="no">06</span>정체구분 라벨 사전</h2>
   <p>한 건에 여러 판정이 겹치면 쉼표로 병기합니다. <b>순서는 고정</b>이라 같은 조합은 항상
      같은 문자열 — 필터 값이 흩어지지 않습니다.</p>
@@ -181,7 +181,7 @@
   </table>
 </section>
 
-<section id="s7">
+<section id="actions">
   <h2><span class="no">07</span>처리요청 — 무엇을 하면 되나</h2>
   <table>
     <tr><th>처리요청</th><th>하는 일</th><th>판단 팁</th></tr>
@@ -201,7 +201,7 @@
     활동이 시작된 건(위임장출력·서류등록)은 만료를 넘겼어도 이미 투입된 일이 있으니 살리는 쪽을 먼저 봅니다.</div>
 </section>
 
-<section id="s8">
+<section id="expiry">
   <h2><span class="no">08</span>만료 축 — 신청경과일 읽기</h2>
   <table>
     <tr><th class="center">신청경과일</th><th>의미</th><th>표시</th></tr>
@@ -212,7 +212,7 @@
   <p class="sub">신청경과일은 달력일(만료 계산이 달력 기준), 체류경과일은 영업일(작업 소요 기준) — 단위가 다른 게 의도입니다.</p>
 </section>
 
-<section id="s9">
+<section id="columns">
   <h2><span class="no">09</span>컬럼 읽는 법</h2>
   <table>
     <tr><th>컬럼</th><th>설명</th></tr>
@@ -227,7 +227,7 @@
   </table>
 </section>
 
-<section id="s10">
+<section id="screen-rules">
   <h2><span class="no">10</span>화면 규칙</h2>
   <ul>
     <li><b>줄무늬</b> = 같은 배당 묶음 (미배당 블록은 같은 병약국 묶음). 한 덩어리 = 한 번에 처리할 단위.</li>
@@ -237,7 +237,7 @@
   </ul>
 </section>
 
-<section id="s11">
+<section id="out-of-scope">
   <h2><span class="no">11</span>관제 밖 영역 — 의도된 위임</h2>
   <p>서류등록의 일반 팩스·이메일 대기(자동청구 이력 없음)는 이 리스트에 올리지 않습니다.
      보험사별 일일 발송한도 때문에 줄 서는 <b>구조적 대기</b>가 대부분이라, 올리면 예외 목록이
@@ -247,7 +247,7 @@
     "관제 밖 대기(팩스·이메일)" 집계(건수·최장 체류·보험사별)를 한 줄로 감시할 예정입니다.</div>
 </section>
 
-<section id="s12">
+<section id="rationale">
   <h2><span class="no">12</span>기준의 근거 — 왜 이 숫자인가</h2>
   <h3>대리인지정 15영업일</h3>
   <p>과거 전이 데이터에서 대리인지정 → 다음 상태 소요의 상위 99%가 약 8영업일(11달력일) 안에
@@ -268,7 +268,7 @@
      당분간 증가합니다. 이 정리가 현재 리스트의 가장 큰 덩어리입니다.</p>
 </section>
 
-<section id="s13">
+<section id="closed-reassign">
   <h2><span class="no">13</span>종결·재배당 탭</h2>
   <h3>재배당 탭</h3>
   <p>메모(폴리스·수기)에 '재배당'이 언급된 진행중 건은 센터 리스트에서 빼서 재배당 탭으로만
@@ -288,7 +288,7 @@
     실패·취소·반송(이탈) 도달</b>로 바뀝니다. 기간만료 처리 실적도 이때 실패사유=기간만료로 추적됩니다.</div>
 </section>
 
-<section id="s14">
+<section id="glossary">
   <h2><span class="no">14</span>용어집</h2>
   <dl class="glossary">
     <dt>체류 / 체류경과일 / 체류시작일</dt>

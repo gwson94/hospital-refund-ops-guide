@@ -39,7 +39,12 @@
 
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 16px 0; }
   .card { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--soft); }
-  .card b.t { display: block; margin-bottom: 6px; font-size: 15px; }
+  .card b.t { display: block; margin-bottom: 10px; padding-bottom: 8px; font-size: 15px;
+              border-bottom: 1px solid var(--line); }
+  .card p { margin: 6px 0; font-size: 14.5px; }
+  .card p.sub { font-size: 13px; line-height: 1.6; }
+  .card ul { margin: 0; padding-left: 17px; }
+  .card li { margin: 6px 0; font-size: 14.5px; line-height: 1.55; }
   .card.accent { background: var(--blue); border-color: #b7d3ea; }
 
   table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 14.5px; }

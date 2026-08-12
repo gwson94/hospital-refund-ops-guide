@@ -39,7 +39,8 @@
 
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin: 16px 0; }
   .cards.wide2 { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
-  .card { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--soft); }
+  .card { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--soft);
+          display: flex; flex-direction: column; }
   .card b.t { display: block; margin-bottom: 10px; padding-bottom: 8px; font-size: 15px;
               border-bottom: 1px solid var(--line); }
   .card p { margin: 6px 0; font-size: 14.5px; }
@@ -49,7 +50,8 @@
            color: var(--blue-ink); border-radius: 5px; padding: 1px 8px; font-size: 12px; font-weight: 700; }
   a.card { color: inherit; }
   a.card:hover { border-color: var(--navy); background: #fff; text-decoration: none; }
-  .card .more { display: block; margin-top: 12px; font-size: 12.5px; color: #0969da; font-weight: 600; }
+  .card .more { display: block; margin-top: auto; padding-top: 14px; font-size: 12.5px;
+                color: #0969da; font-weight: 600; }
   .card ul { margin: 0; padding-left: 17px; }
   .card li { margin: 6px 0; font-size: 14.5px; line-height: 1.55; }
   .card.accent { background: var(--blue); border-color: #b7d3ea; }

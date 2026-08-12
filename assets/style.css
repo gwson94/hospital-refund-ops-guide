@@ -44,6 +44,9 @@
               border-bottom: 1px solid var(--line); }
   .card p { margin: 6px 0; font-size: 14.5px; }
   .card p.sub { font-size: 13px; line-height: 1.6; }
+  .kv { display: flex; gap: 10px; margin: 8px 0; font-size: 14.5px; align-items: baseline; }
+  .kv .k { flex: none; min-width: 40px; text-align: center; background: var(--blue);
+           color: var(--blue-ink); border-radius: 5px; padding: 1px 8px; font-size: 12px; font-weight: 700; }
   .card ul { margin: 0; padding-left: 17px; }
   .card li { margin: 6px 0; font-size: 14.5px; line-height: 1.55; }
   .card.accent { background: var(--blue); border-color: #b7d3ea; }

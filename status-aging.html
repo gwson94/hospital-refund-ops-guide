@@ -103,8 +103,8 @@
   </table>
   <div class="callout"><b class="t">먼저 알아둘 것 두 가지</b>
     ① <b>서비스기간은 신청일부터 90일</b>입니다. 90일째가 마지막 유효일이고, 91일째부터 만료입니다.<br>
-    ② 일부 건은 <b>하이웹넷(보험사 전자망)으로 자동 발송</b>을 시도합니다. 실패하면 수동 처리
-    대상으로 돌아오고, 이 시트에 <a href="#labels">자동청구실패</a> 라벨로 표시됩니다.</div>
+    ② 서류등록까지 간 일부 건은 <b>자동청구 발송</b>(하이웹넷 전자망)을 시도합니다. 실패하면 수동
+    발송 대상으로 돌아오고, 이 시트에 <a href="#labels">자동청구실패</a> 라벨로 표시됩니다.</div>
 </section>
 
 <section id="case-flow">
@@ -165,7 +165,7 @@
       <div class="kv"><span class="k">화면</span><span>세부단계 라벨(발급도착정체·검수정체) 병기</span></div></div>
     <div class="card"><b class="t">서류등록</b>
       <div class="kv"><span class="k">기준</span><span>이 상태로 15영업일 초과</span></div>
-      <div class="kv"><span class="k">범위</span><span>등기 발송 건 + 자동청구 실패로 수동 전환된 팩스·이메일 건</span></div>
+      <div class="kv"><span class="k">범위</span><span>등기 발송 건 + 자동청구 발송 실패로 수동 전환된 팩스·이메일 건</span></div>
       <div class="kv"><span class="k">의미</span><span>발급·검수는 끝났고 청구서 발송 버튼만 남은 건</span></div>
       <div class="kv"><span class="k">예외</span><span>만료 규칙 미적용 — 체류 기준만 봄</span></div></div>
   </div>
@@ -183,7 +183,7 @@
     <tr><td><span class="chip exp">만료지남</span></td><td>서비스기간(신청일+90일)이 끝난 건입니다</td><td>신청경과일 91 이상</td></tr>
     <tr><td><span class="chip near">만료임박</span></td><td>만료까지 15일 이하 남은 건입니다</td><td>신청경과일 75~90</td></tr>
     <tr><td><span class="chip re">재배당정체</span></td><td>재배당이 진행 중인 건입니다</td><td>폴리스메모·수기메모에 '재배당' 언급</td></tr>
-    <tr><td><span class="chip auto">자동청구실패</span></td><td>하이웹넷 자동청구를 시도했다가 실패해서, 수동으로 발송해야 하는 건입니다</td><td>하이웹넷청구대기 이력 존재</td></tr>
+    <tr><td><span class="chip auto">자동청구실패</span></td><td>정상 발급·검수를 거쳐 서류등록된 건이, 자동청구 발송에 실패해 수동 발송 대상이 된 건입니다</td><td>자동청구 발송 대기열(하이웹넷청구대기) 이력 존재</td></tr>
     <tr><td><span class="chip stg">발급도착정체</span></td><td>(위임장출력) 활동은 시작했는데 서류가 오지 않은 건입니다</td><td>활동일 있음 + 도착일 공란</td></tr>
     <tr><td><span class="chip stg">검수정체</span></td><td>(위임장출력) 서류는 도착했는데 검수가 안 끝난 건입니다</td><td>도착일 있음</td></tr>
     <tr><td><span class="chip stg">누락의심</span></td><td>같은 배당의 다른 건들은 다 끝났는데 이 건만 남은, 잊혔을 가능성이 높은 건입니다</td><td>배당 안에 서류등록/청구서발송까지 간 건 존재</td></tr>

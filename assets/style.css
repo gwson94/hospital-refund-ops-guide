@@ -25,8 +25,9 @@
   .badge { display: inline-block; background: rgba(255,255,255,.18); border-radius: 999px;
            padding: 2px 12px; font-size: 13px; margin-bottom: 14px; }
 
-  nav.toc { position: sticky; top: 0; background: #fff; border-bottom: 1px solid var(--line);
-            z-index: 10; padding: 10px 0; }
+  nav.toc { position: -webkit-sticky; position: sticky; top: 0; background: #fff;
+            border-bottom: 1px solid var(--line); z-index: 10; padding: 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,.07); }
   nav.toc .wrap { display: flex; flex-wrap: wrap; gap: 6px; }
   nav.toc a { font-size: 13px; padding: 4px 10px; border: 1px solid var(--line);
               border-radius: 999px; color: var(--sub); white-space: nowrap; }

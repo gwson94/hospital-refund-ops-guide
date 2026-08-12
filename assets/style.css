@@ -128,3 +128,12 @@ aside.side a.on { background: var(--blue); color: var(--blue-ink); font-weight: 
   aside.side .ttl { width: 100%; }
   aside.side a { font-size: 12.5px; border: 1px solid var(--line); border-radius: 999px; }
 }
+
+
+/* ── 앵커 도착 플래시 — 클릭 후 목적지 섹션 강조 ── */
+@keyframes target-flash {
+  0%   { background: #fff3cc; box-shadow: inset 4px 0 0 var(--navy); }
+  45%  { background: #fff3cc; box-shadow: inset 4px 0 0 var(--navy); }
+  100% { background: transparent; box-shadow: inset 0 0 0 transparent; }
+}
+.flash { animation: target-flash 2s ease-out; border-radius: 10px; }

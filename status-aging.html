@@ -58,7 +58,7 @@
       </ul>
       <span class="more">담당자명이 정해지는 규칙 →</span></a>
     <a class="card" href="#screen-rules"><b class="t">언제 갱신되나</b>
-      <p>매일 아침 자동으로 새로 그려집니다 (전날 데이터 기준).</p>
+      <p>매일 아침 7시에 자동으로 새로 그려집니다 (전날 데이터 기준).</p>
       <ul>
         <li><b>수기메모 열에 쓴 내용만 보존</b>됩니다</li>
         <li>다른 셀에 직접 쓴 내용은 다음 날 사라집니다</li>
@@ -70,7 +70,7 @@
     <tr><th>현재상태</th><th>언제 리스트에 올라오나</th><th>뭘 하면 되나</th></tr>
     <tr><td><a href="#criteria">대리인미지정</a></td><td>신청 후 75일이 지나도록 대리인이 없음</td><td><a href="#actions">미배당 지연건 확인필요</a></td></tr>
     <tr><td><a href="#criteria">대리인지정</a></td><td>이 상태로 15영업일 초과 (또는 만료지남)</td><td><a href="#actions">발급활동지연 확인필요</a></td></tr>
-    <tr><td><a href="#criteria">위임장출력</a></td><td>만료지남(신청 91일+) 건만</td><td><a href="#actions">세부단계별 확인</a></td></tr>
+    <tr><td><a href="#criteria">위임장출력</a></td><td>발급·검수 단계별 기준일부터 10영업일 멈춤 (2h센터는 발급구간만 15영업일)</td><td><a href="#actions">세부단계별 확인</a></td></tr>
     <tr><td><a href="#criteria">서류등록</a></td><td>이 상태로 15영업일 초과 (등기·자동청구실패 건)</td><td><a href="#actions">청구서 발송 처리</a></td></tr>
     <tr><td>신청확인중</td><td colspan="2">리스트에 없음 — 남은 건 전부 고객의 신분증 재제출을 기다리는 중이라 매니저가 할 일이 없습니다</td></tr>
   </table>
@@ -117,15 +117,16 @@
     <div class="farrow">신분증 검수 통과 ▼</div>
     <div class="fnode"><div class="fbox">대리인미지정</div>
       <div class="fnote"><span class="crit">신청 75일이 지나면 리스트에 올라옵니다.</span><br>
-        센터 배당 담당자가 병약국 단위로 대리인 지정 여부를 판단합니다.</div></div>
+        센터장·배당매니저가 병약국 단위로 대리인 지정 여부를 판단합니다.</div></div>
     <div class="farrow">대리인 지정 ▼</div>
     <div class="fnode"><div class="fbox">대리인지정</div>
       <div class="fnote"><span class="crit">이 상태로 15영업일이 넘으면 리스트에 올라옵니다.</span><br>
         매니저가 위임장출력을 처리해줘야 대리인이 활동을 시작할 수 있습니다.</div></div>
     <div class="farrow">위임장출력 처리 ▼</div>
     <div class="fnode"><div class="fbox">위임장출력<span class="s">발급활동 → 서류도착 → 검수</span></div>
-      <div class="fnote"><span class="crit">만료지남(신청 91일+) 건만 이 리스트에 올라옵니다.</span><br>
-        발급 진행 중 일반 정체(기준일부터 10영업일+ — 2h센터는 발급구간만 15영업일+, 검수 대기는 동일 10일)는 기존 아침 정체 보고(센터 탭)가 따로 담당합니다.</div></div>
+      <div class="fnote"><span class="crit">단계별 기준일부터 10영업일 멈추면 리스트에 올라옵니다.</span><br>
+        발급도착정체 = 활동일부터 10영업일(2h센터만 15영업일) / 검수정체 = 서류도착일부터 10영업일(2h센터 동일).
+        만료지남(신청 91일+) 건은 기간과 무관하게 항상 표시됩니다.</div></div>
     <div class="farrow">발급 활동 → 서류 도착 → 검수 ▼</div>
     <div class="fnode"><div class="fbox">서류등록<span class="s">청구서 발송 대기</span></div>
       <div class="fnote"><span class="crit">등기·자동청구실패 건이 15영업일 넘게 머물면 리스트에 올라옵니다.</span></div></div>
@@ -152,17 +153,17 @@
       <div class="kv"><span class="k">기준</span><span>신청 후 75일 지남 (만료까지 15일 이하)</span></div>
       <div class="kv"><span class="k">의미</span><span>아직 대리인이 배정되지 않은 건</span></div>
       <div class="kv"><span class="k">화면</span><span>배당번호·대리인명 공란, 같은 병약국끼리 묶임</span></div>
-      <div class="kv"><span class="k">담당</span><span>센터별 배당 담당자</span></div></div>
+      <div class="kv"><span class="k">담당</span><span>센터장·배당매니저</span></div></div>
     <div class="card"><b class="t">대리인지정</b>
       <div class="kv"><span class="k">기준</span><span>이 상태로 15영업일 초과 (또는 만료지남)</span></div>
       <div class="kv"><span class="k">의미</span><span>위임장출력 처리가 안 돼 대리인이 활동을 못 시작한 건</span></div>
       <div class="kv"><span class="k">근거</span><span>정상 건은 99%가 8영업일 안에 위임장출력으로 넘어감</span></div>
       <div class="kv"><span class="k">담당</span><span>대리인을 지정한 매니저</span></div></div>
     <div class="card"><b class="t">위임장출력</b>
-      <div class="kv"><span class="k">기준</span><span>만료지남(신청 91일+) 건만</span></div>
-      <div class="kv"><span class="k">의미</span><span>발급 진행 중에 서비스기간이 끝나버린 건</span></div>
-      <div class="kv"><span class="k">참고</span><span>일반 정체(기준일부터 10영업일+ — 2h는 발급구간만 15영업일)는 기존 아침 보고가 담당 — 중복 배제</span></div>
-      <div class="kv"><span class="k">화면</span><span>세부단계 라벨(발급도착정체·검수정체) 병기</span></div></div>
+      <div class="kv"><span class="k">기준</span><span>단계별 기준일부터 10영업일 멈춤 (2h센터는 발급구간만 15영업일)</span></div>
+      <div class="kv"><span class="k">세부</span><span>발급도착정체 = 활동일부터 서류 미도착 / 검수정체 = 서류도착일부터 검수 미완 / 누락의심 = 검수정체 중 같은 배당 일부만 완료</span></div>
+      <div class="kv"><span class="k">의미</span><span>발급 진행이 단계 중간에 멈춘 건</span></div>
+      <div class="kv"><span class="k">화면</span><span>세부단계 라벨 병기 — 처리요청도 라벨별로 다름</span></div></div>
     <div class="card"><b class="t">서류등록</b>
       <div class="kv"><span class="k">기준</span><span>이 상태로 15영업일 초과</span></div>
       <div class="kv"><span class="k">범위</span><span>등기 발송 건 + 자동청구 발송 실패로 수동 전환된 팩스·이메일 건</span></div>
@@ -182,10 +183,10 @@
     <tr><th>라벨</th><th>의미</th><th>판정 기준</th></tr>
     <tr><td><span class="chip exp">만료지남</span></td><td>서비스기간(신청일+90일)이 끝난 건입니다</td><td>신청경과일 91 이상</td></tr>
     <tr><td><span class="chip near">만료임박</span></td><td>만료까지 15일 이하 남은 건입니다</td><td>신청경과일 75~90</td></tr>
-    <tr><td><span class="chip re">재배당정체</span></td><td>재배당이 진행 중인 건입니다</td><td>폴리스메모·수기메모에 '재배당' 언급</td></tr>
-    <tr><td><span class="chip auto">자동청구실패</span></td><td>정상 발급·검수를 거쳐 서류등록된 건이, 자동청구 발송에 실패해 수동 발송 대상이 된 건입니다</td><td>자동청구 발송 대기열(하이웹넷청구대기) 이력 존재</td></tr>
-    <tr><td><span class="chip stg">발급도착정체</span></td><td>(위임장출력) 활동은 시작했는데 서류가 오지 않은 건입니다</td><td>활동일 있음 + 도착일 공란</td></tr>
-    <tr><td><span class="chip stg">검수정체</span></td><td>(위임장출력) 서류는 도착했는데 검수가 안 끝난 건입니다</td><td>도착일 있음</td></tr>
+    <tr><td><span class="chip re">재배당정체</span></td><td>정체 대상 중 재배당이 진행 중인 건입니다</td><td>메모(폴리스·수기)에 '재배당' 언급 + 현재상태가 대리인미지정~위임장출력 → <a href="#closed-reassign">재배당 탭</a>으로 이동</td></tr>
+    <tr><td><span class="chip auto">자동청구실패</span></td><td>정상 발급·검수를 거쳐 서류등록된 건이, 자동청구 발송에 실패해 수동 발송 대상이 된 건입니다</td><td>자동청구 발송 실패 이력 존재 — 어드민 '보험사청구 → 전송내역 → 실패건만보기' 목록과 동일</td></tr>
+    <tr><td><span class="chip stg">발급도착정체</span></td><td>(위임장출력) 활동은 시작했는데 서류가 오지 않은 건입니다</td><td>활동일 있음 + 서류도착일 공란</td></tr>
+    <tr><td><span class="chip stg">검수정체</span></td><td>(위임장출력) 서류는 도착했는데 검수가 안 끝난 건입니다</td><td>서류도착일 있음</td></tr>
     <tr><td><span class="chip stg">누락의심</span></td><td>같은 배당의 다른 건들은 다 끝났는데 이 건만 남은, 잊혔을 가능성이 높은 건입니다</td><td>배당 안에 서류등록/청구서발송까지 간 건 존재</td></tr>
     <tr><td><span class="chip dw">체류정체</span></td><td>상태별 체류 기준(<a href="#criteria">05</a>)을 넘겨서 올라온 건입니다</td><td>체류경과일 ≥ 상태별 기준</td></tr>
   </table>
@@ -196,16 +197,16 @@
   <table>
     <tr><th>처리요청</th><th>이렇게 하세요</th></tr>
     <tr><td>미배당 지연건 확인필요</td><td>① 병약국서비스불가사유·병약국메모부터 확인 — 폐업·발급거부·비용발생 등 서비스불가면 서류발급실패 처리<br>
-        ② 서비스 가능하면 대리인 지정 (병약국 단위 — 지정하면 그 병약국의 건들이 한꺼번에 풀립니다)<br>
-        ③ 지정이 불가능하면 기간만료 처리 검토</td></tr>
-    <tr><td>발급활동지연 확인필요</td><td><b>대리인지정 건</b>: 위임장출력이 처리됐는지 확인하세요 — 출력이 돼야 대리인이 활동을 시작할 수 있습니다<br>
+        ② 서비스 가능하고 발급을 받아올 수 있다면 대리인 지정 (병약국 단위 — 지정하면 그 병약국의 건들이 한꺼번에 풀립니다)<br>
+        ③ 발급이 불가능하면 기간만료 처리 검토</td></tr>
+    <tr><td>발급활동지연 확인필요</td><td><b>대리인지정 건</b>: 발급 가능한 상황인지 확인하고 위임장출력을 처리하세요 — 출력이 돼야 대리인이 활동을 시작할 수 있습니다<br>
         <b>위임장출력 건</b>: ① 대리인이 아직 활동 중인지 (진행 중이면 진행 독려)
         ② 활동이 끝났다면 서류가 이미 도착했는데 <b>서류도착일 입력이 누락</b>된 건 아닌지 — 누락이면 도착일 입력 (실측상 가장 흔한 원인)
         ③ 병약국 발급 제약(병약국메모의 발급시간·휴무)으로 늦어지는지 확인하세요<br>
         공통: 만료지남이 붙어 있고 살릴 수 없다면 기간만료 처리</td></tr>
-    <tr><td>검수 진행상황 확인필요</td><td>지방 건은 서울 검수센터 발송 여부부터 확인 → 발송됐으면 검수가 왜 안 끝났는지 확인하세요</td></tr>
+    <tr><td>검수 진행상황 확인필요</td><td>광역시 센터 건은 서울 검수센터 발송 여부부터 확인 → 발송됐으면 검수가 왜 안 끝났는지 확인하세요</td></tr>
     <tr><td>검수누락 확인필요</td><td>같은 배당의 나머지는 끝났고 이 건만 빠진 상태 — 우선 확인해서 검수를 마무리하세요 (<b>우선순위 가장 높음</b>)</td></tr>
-    <tr><td>청구서 발송 처리</td><td>발급·검수가 끝난 건 — 청구서 발송 버튼을 처리하세요 (만료지남이 붙어 있어도 발송하면 됩니다)</td></tr>
+    <tr><td>청구서 발송 처리</td><td>발급·검수가 끝난 건 — 자동청구 실패 건도 포함돼 있으니 보험사청구(청구서 발송)를 처리하세요 (만료지남이 붙어 있어도 발송하면 됩니다)</td></tr>
   </table>
   <div class="callout"><b class="t">기간만료 처리는 어디까지?</b>
     기간만료 처리는 <b>대리인이 활동을 시작하기 전 단계(미지정·지정)에서만</b> 검토합니다.
@@ -230,11 +231,11 @@
     <tr><td>신청경과일</td><td>고객이 신청한 날부터 오늘까지 며칠 지났는지 (달력일). 만료 판단의 축입니다</td></tr>
     <tr><td>체류경과일(영업일)</td><td>지금 상태에 들어온 날부터 몇 영업일 지났는지. 같은 상태에 다시 들어온 건은 마지막 진입일부터 셉니다</td></tr>
     <tr><td>체류시작일 · 활동일 · 서류도착일</td><td>판정에 쓰인 실제 날짜들입니다. 날짜가 이상하면(순서 뒤바뀜 등) 데이터 확인이 필요한 건입니다</td></tr>
-    <tr><td>담당자명</td><td>대리인미지정 = 센터 배당 담당자 / 대리인지정 = 지정 처리한 매니저 / 그 외 = 공란(센터 공동)</td></tr>
+    <tr><td>담당자명</td><td>대리인미지정 = 센터장·배당매니저 / 대리인지정 = 지정 처리한 매니저 / 그 외 = 공란(센터 공동)</td></tr>
     <tr><td>병약국서비스불가사유</td><td>서비스 불가(N) 병약국만 사유가 표시됩니다. 공란이면 서비스 중입니다</td></tr>
     <tr><td>병약국메모</td><td>발급시간 제약·휴무·폐업 같은 병약국 특이사항입니다. 정체 원인을 판단할 때 먼저 보세요</td></tr>
     <tr><td>폴리스메모</td><td>시스템의 청구건 메모입니다 (읽기 전용)</td></tr>
-    <tr><td>수기메모</td><td><b>직접 기록하는 열입니다 (노란 배경)</b>. 매일 갱신돼도 병원별번호 기준으로 유지됩니다</td></tr>
+    <tr><td>수기메모</td><td><b>직접 기록하는 열입니다 (노란 배경)</b>. 매일 갱신돼도 병원별번호 기준으로 유지되고, 종결·재배당 탭으로 이동해도 따라갑니다</td></tr>
   </table>
 </section>
 
@@ -280,9 +281,12 @@
 <section id="closed-reassign">
   <h2><span class="no">13</span>종결·재배당 탭</h2>
   <h3>재배당 탭</h3>
-  <p>메모(폴리스·수기)에 '재배당'이 적힌 진행중 건은 센터 리스트에서 빼고 재배당 탭에만
-     보여줍니다 — 센터 담당 소관을 벗어난 건이 두 곳에 겹쳐 보이지 않게 하기 위해서입니다.
-     센터 블록 순으로 정렬되고, 신청경과일로 만료 위험을 함께 봅니다.</p>
+  <p>메모(폴리스·수기)에 '재배당'이 적혀 있고 <b>현재상태가 대리인미지정~위임장출력</b>인 건은
+     센터 리스트에서 빼고 재배당 탭에서만 추적합니다 — 수기메모에 쓰면 다음 날부터 이동합니다.
+     재배당 중에도 정체기간·신청경과일은 계속 누적됩니다 (시계가 멈추지 않습니다).</p>
+  <div class="kv"><span class="k">성공</span><span>서류등록에 도달하면 재배당 성공 → 탭에서 빠집니다. 이후엔 메모에 '재배당'이 남아 있어도 재배당으로 보지 않으니 메모를 지울 필요가 없습니다.</span></div>
+  <div class="kv"><span class="k">이탈</span><span>실패·취소로 끝나면 종결 탭으로 갑니다.</span></div>
+  <div class="kv"><span class="k">화면</span><span>센터 블록 순 정렬, 신청경과일로 만료 위험을 함께 봅니다.</span></div>
   <h3>종결 탭</h3>
   <p>정체 목록을 벗어나 끝난 건의 기록입니다. 시간 컬럼이 세 가지인 것만 기억하면 됩니다.</p>
   <table>
@@ -317,7 +321,7 @@
     <dt>하이웹넷</dt>
     <dd>보험사 전자청구망. 자동청구 시도 후 실패하면 수동 흐름으로 복귀 → 라벨 "자동청구실패".</dd>
     <dt>폴리스메모 / 수기메모</dt>
-    <dd>폴리스메모 = 시스템의 청구건 메모(읽기 전용) / 수기메모 = 시트에서 직접 쓰는 열(노란 배경, 매일 갱신에도 보존).</dd>
+    <dd>폴리스메모 = 시스템의 청구건 메모(읽기 전용) / 수기메모 = 시트에서 직접 쓰는 열(노란 배경, 매일 갱신에도 보존 — 종결·재배당 탭 이동 시에도 유지).</dd>
     <dt>2h센터</dt>
     <dd>여러 지역의 청구건을 대신 발급하는 별도 인력 그룹. 지리 센터와 무관하게 "2h센터"로 분류.</dd>
     <dt>누락의심</dt>

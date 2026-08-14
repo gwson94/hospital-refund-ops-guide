@@ -23,7 +23,7 @@
   <a href="#screen-rules">화면 규칙</a>
   <a href="#out-of-scope">관제 밖 영역</a>
   <a href="#rationale">기준의 근거</a>
-  <a href="#closed-reassign">종결·재배당 탭</a>
+  <a href="#closed-reassign">청구·종결·재배당 탭</a>
   <a href="#glossary">용어집</a>
 </aside>
 <div class="content">
@@ -71,7 +71,7 @@
     <tr><td><a href="#criteria">대리인미지정</a></td><td>신청 후 75일이 지나도록 배당되지 않음</td><td><a href="#actions">미배당 지연건 확인필요</a></td></tr>
     <tr><td><a href="#criteria">대리인지정</a></td><td>대리인지정 상태로 15영업일 경과(또는 만료지남)</td><td><a href="#actions">발급활동지연 확인필요</a></td></tr>
     <tr><td><a href="#criteria">위임장출력</a></td><td>발급·검수 단계별 기준일부터 10영업일 경과(2h센터는 발급구간만 15영업일 적용)</td><td><a href="#actions">세부단계별 확인</a></td></tr>
-    <tr><td><a href="#criteria">서류등록</a></td><td>자동청구(팩스·이메일) 최초 진입 15영업일 / 수동(등기) 5영업일 경과</td><td><a href="#actions">청구서 발송 처리</a></td></tr>
+    <tr><td><a href="#criteria">서류등록</a></td><td>자동청구(팩스·이메일) 최초 진입 15영업일 / 수동(등기) 5영업일 경과</td><td><a href="#actions">청구서 발송 처리</a> (청구 탭에 표시)</td></tr>
     <tr><td>신청확인중</td><td colspan="2">리스트 제외</td></tr>
   </table>
 
@@ -165,7 +165,8 @@
       <div class="kv"><span class="k">자동청구</span><span>팩스·이메일: 최초 서류등록부터 15영업일 경과 (정상 한도 대기는 12영업일 안에 소화됨)</span></div>
       <div class="kv"><span class="k">수동청구</span><span>등기: 최초 서류등록부터 5영업일 경과 (정상 리드타임 2~3영업일)</span></div>
       <div class="kv"><span class="k">가드</span><span>최근 5영업일 내 발송 시도가 있으면 제외(시스템이 처리 중인 건은 안 올림). 등기는 사람이 직접 발송해 '처리 중' 상태가 없어 가드·발송실패 라벨 미적용, 5영업일이 유예 역할</span></div>
-      <div class="kv"><span class="k">예외</span><span>만료 규칙 미적용. 기준일은 재등록돼도 리셋 안 됨(최초 진입)</span></div></div>
+      <div class="kv"><span class="k">예외</span><span>만료 규칙 미적용. 기준일은 재등록돼도 리셋 안 됨(최초 진입)</span></div>
+      <div class="kv"><span class="k">화면</span><span>센터 탭이 아닌 <a href="#closed-reassign">청구 탭</a>에 표시 — 보험사 블록 정렬(발송 담당·청구팀 소관)</span></div></div>
   </div>
   <div class="callout warn"><b class="t">만료지남 건은 무조건 올라옵니다</b>
     신청 91일이 지난 진행중 건은 체류 기간과 상관없이 항상 리스트에 표시됩니다 (서류등록만 예외). <a href="#labels">만료지남</a> 라벨로 구분됩니다.</div>
@@ -277,7 +278,11 @@
 </section>
 
 <section id="closed-reassign">
-  <h2><span class="no">13</span>종결·재배당 탭</h2>
+  <h2><span class="no">13</span>청구·종결·재배당 탭</h2>
+  <h3>청구 탭</h3>
+  <p>서류등록(발송 대기·발송실패) 건 전량을 모아 <b>보험사 블록</b>으로 보여줍니다. 발송 처리의
+     주체가 센터가 아니라 발송 담당·청구팀이라 센터 탭과 분리했습니다. 블록 안은 신청경과
+     오래된 순이고, 발송되면 다음 날 자동으로 빠집니다 (수기메모는 유지).</p>
   <h3>재배당 탭</h3>
   <p>메모(폴리스·수기)에 '재배당'이 적혀 있고 <b>현재상태가 대리인미지정~위임장출력</b>인 건은
      센터 리스트에서 빼고 재배당 탭에서만 추적합니다. 수기메모에 쓰면 다음 날부터 이동합니다.

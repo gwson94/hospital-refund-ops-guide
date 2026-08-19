@@ -124,6 +124,7 @@
     <div class="fnode"><div class="fbox">위임장출력<span class="s">발급활동 → 서류도착 → 검수</span></div>
       <div class="fnote"><span class="crit">단계별로 진행상태가 멈추면 기준일부터 10영업일 경과건이 리스트에 올라옵니다.</span><br>
         발급도착정체 = 활동일부터 10영업일(2h센터만 15영업일) / 검수정체 = 서류도착일부터 10영업일(2h센터 동일).
+        누락의심 건(같은 배당의 형제건들은 서류등록까지 갔는데 이 건만 남은 것)은 형제 마지막 서류등록 후 2영업일이 지나면 도착 10영업일을 기다리지 않고 바로 올라옵니다.
         만료지남(신청 91일+) 건은 기간과 무관하게 항상 표시됩니다.</div></div>
     <div class="farrow">발급 활동 → 서류 도착 → 검수 ▼</div>
     <div class="fnode"><div class="fbox">서류등록<span class="s">청구서 발송 대기</span></div>
@@ -158,7 +159,7 @@
       <div class="kv"><span class="k">담당</span><span>대리인을 지정한 매니저</span></div></div>
     <div class="card"><b class="t">위임장출력</b>
       <div class="kv"><span class="k">기준</span><span>단계별 기준일부터 10영업일 경과 (2h센터는 발급구간만 15영업일)</span></div>
-      <div class="kv"><span class="k">세부</span><span>발급도착정체 = 활동일부터 서류 미도착 / 검수정체 = 서류도착일부터 검수 미완료 / 누락의심 = 검수정체 중 같은 배당 일부만 완료</span></div>
+      <div class="kv"><span class="k">세부</span><span>발급도착정체 = 활동일부터 서류 미도착 / 검수정체 = 서류도착일부터 검수 미완료 / 누락의심 = 형제 서류등록 후 2영업일 지나도 이 건만 검수 미완료</span></div>
       <div class="kv"><span class="k">의미</span><span>발급 진행이 단계 중간에 멈춘 건</span></div>
       <div class="kv"><span class="k">화면</span><span>세부단계 라벨 병기, 처리요청도 라벨별로 다름</span></div></div>
     <div class="card"><b class="t">서류등록</b>
@@ -184,7 +185,7 @@
     <tr><td><span class="chip stg">발급도착정체</span></td><td>(위임장출력) 활동은 시작했는데 서류가 오지 않은 건입니다</td><td>활동일 있음 + 서류도착일 공란</td></tr>
     <tr><td><span class="chip stg">검수정체</span></td><td>(위임장출력) 서류는 도착했는데 검수가 안 끝난 건입니다</td><td>서류도착일 있음</td></tr>
     <tr><td><span class="chip stg">서울발송필요</span></td><td>(검수정체 중) 지방센터 건인데 서류가 아직 서울 검수센터로 발송되지 않은 건입니다</td><td>지역센터(순수 지리, 2h 무관)가 비서울권 + 슬랙 발송보고 없음 (누락의심이 붙으면 그쪽이 우선)</td></tr>
-    <tr><td><span class="chip stg">누락의심</span></td><td>같은 배당의 다른 건들은 서류등록/청구서발송까지 진행됐는데 이 건만 남아, 검수누락 가능성이 높은 건입니다</td><td>배당 안에 서류등록/청구서발송까지 간 건 존재</td></tr>
+    <tr><td><span class="chip stg">누락의심</span></td><td>같은 배당의 다른 건들은 서류등록/청구서발송까지 진행됐는데 이 건만 남아, 검수누락 가능성이 높은 건입니다</td><td>형제 마지막 서류등록 후 2영업일 경과. 도착 10영업일을 기다리지 않고 바로 리스트에 올라옵니다 (완료 직후는 처리 중일 수 있어 제외)</td></tr>
     <tr><td><span class="chip dw">체류정체</span></td><td>상태별 체류 기준(<a href="#criteria">05</a>)을 넘겨서 올라온 건입니다</td><td>체류경과일 ≥ 상태별 기준</td></tr>
   </table>
 </section>
@@ -329,7 +330,7 @@
     <dt>2h센터</dt>
     <dd>여러 지역의 청구건을 대신 발급하는 별도 인력 그룹. 지리 센터와 무관하게 "2h센터"로 분류.</dd>
     <dt>누락의심</dt>
-    <dd>같은 배당의 형제건들은 검수완료됐는데 이 건만 검수 단계에 남은 것. 잊힌 건일 가능성이 높아 우선 확인.</dd>
+    <dd>같은 배당의 형제건들은 검수완료됐는데 이 건만 검수 단계에 남은 것. 형제 마지막 서류등록 후 2영업일이 지나면 바로 리스트에 올라옵니다. 잊힌 건일 가능성이 높아 우선 확인.</dd>
   </dl>
 </section>
 
